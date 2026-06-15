@@ -6,7 +6,7 @@
 写作 Skill 无需加载模型，只需发送文本查询即可。
 
 启动:
-    python embedding_service.py
+    python search_service.py
 
 接口:
     POST /search
@@ -18,6 +18,18 @@
     GET /health
     返回服务状态
 """
+
+# ---- 必须在一切 import 之前设置环境变量 ----
+import os
+import sys
+
+# 模型存放目录（若已下载则跳过联网）
+MODEL_CACHE_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "models", "bge-m3")
+
+# HuggingFace 源设置（需在 import huggingface_hub 之前）
+# 优先用镜像；若失败，注释此行改用官方源或本地模型
+# os.environ.setdefault("HF_ENDPOINT", "https://hf-mirror.com")
+os.environ.setdefault("HF_HUB_ENABLE_HF_TRANSFER", "0")
 
 import json
 import time
@@ -35,14 +47,18 @@ PORT = 5000
 # ==================== 全局单例（启动时加载一次）====================
 
 print("[服务启动] 加载 BGE-M3 模型...")
-import os
-os.environ.setdefault("HF_ENDPOINT", "https://hf-mirror.com")
 
 from sentence_transformers import SentenceTransformer
 from qdrant_client import QdrantClient
 from qdrant_client.models import Filter, FieldCondition, MatchValue
 
-model = SentenceTransformer(EMBEDDING_MODEL, trust_remote_code=True)
+# 加载模型：优先从本地缓存读取，否则自动下载
+if os.path.isdir(MODEL_CACHE_DIR) and os.listdir(MODEL_CACHE_DIR):
+    print(f"[服务启动] 从本地缓存加载: {MODEL_CACHE_DIR}")
+    model = SentenceTransformer(MODEL_CACHE_DIR, trust_remote_code=True)
+else:
+    print(f"[服务启动] 本地缓存不存在，自动下载 {EMBEDDING_MODEL}...")
+    model = SentenceTransformer(EMBEDDING_MODEL, trust_remote_code=True)
 qdrant = QdrantClient(QDRANT_HOST)
 print(f"[服务启动] 模型就绪 | 设备: {model.device}")
 print(f"[服务启动] Qdrant 连接: {QDRANT_HOST} | Collection: {QDRANT_COLLECTION}")
