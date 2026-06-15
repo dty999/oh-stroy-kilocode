@@ -1,0 +1,6 @@
+# -*- coding: utf-8 -*-
+# sucai 向量检索服务依赖
+flask>=2.3,<3.0
+sentence-transformers>=2.6,<3.0
+qdrant-client>=1.9,<2.0
+torch>=2.0

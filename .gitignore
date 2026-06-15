@@ -1,0 +1,56 @@
+# --- Python ---
+sucai/venv/
+venv/
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+.pytest_cache/
+*.egg-info/
+dist/
+build/
+*.egg
+
+# --- 小说生成产物 ---
+# 封面图片（由 GPT-Image 生成）
+*_cover.png
+*_cover.jpg
+
+# --- OS 文件 ---
+Thumbs.db
+desktop.ini
+.DS_Store
+*.swp
+*.swo
+*~
+
+# --- IDE / 编辑器 ---
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+
+# --- 环境变量 / 密钥 ---
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+credentials.json
+
+# --- 日志 ---
+*.log
+
+# --- Node ---
+# .kilo/ 下 node_modules 由 .kilo/.gitignore 管理
+# 根目录无需 node_modules
+
+# --- Kilo 运行态 ---
+agent-manager.json
+
+# --- 临时文件 ---
+tmp/
+temp/
+*.bak
