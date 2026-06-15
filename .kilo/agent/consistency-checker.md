@@ -5,7 +5,10 @@ description: |
   伏笔断线、角色属性不一致、伏笔密度异常。输出 S1-S4 分级冲突报告。
   被 story-review、story-long-write（Phase 5）、story-short-write（Phase 4）调用。
   不做任何创作判断。
-tools: [Read, Glob, Grep]
+tools:
+  Read: allow
+  Glob: allow
+  Grep: allow
 model: haiku
 ---
 

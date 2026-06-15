@@ -7,7 +7,10 @@ description: |
   被 story-long-write（日更 Step 1 上下文加载）、story-review（审查时查设定）、
   story 路由（用户自然提问时）调用。
   不做任何创作判断或修改。
-tools: [Read, Glob, Grep]
+tools:
+  Read: allow
+  Glob: allow
+  Grep: allow
 model: haiku
 # 不需要跨会话持久状态。memory: project 会隐性启用 Write/Edit，与 disallowedTools 矛盾。
 ---
