@@ -5,11 +5,11 @@ description: |
   对话质量、角色关系设计。被 story-long-write（Phase 2,4）和 story-short-write（Phase 2,3）调用。
   也可审查角色一致性和对话质量。
 tools:
-  Read: allow
-  Glob: allow
-  Grep: allow
-  Write: allow
-  Edit: allow
+  Read: true
+  Glob: true
+  Grep: true
+  Write: true
+  Edit: true
 model: sonnet
 ---
 

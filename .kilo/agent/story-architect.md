@@ -6,11 +6,11 @@ description: |
   被 story-long-write（Phase 1-3）、story-short-write（Phase 1-2）调用。
   也可审查已有内容的结构问题。
 tools:
-  Read: allow
-  Glob: allow
-  Grep: allow
-  Write: allow
-  Edit: allow
+  Read: true
+  Glob: true
+  Grep: true
+  Write: true
+  Edit: true
 model: opus
 # opus 模型单次推理较慢，30 turns 足以完成复杂创作任务。
 ---

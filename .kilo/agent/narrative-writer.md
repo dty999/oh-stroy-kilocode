@@ -6,11 +6,11 @@ description: |
   被 story-long-write（Phase 4-5）和 story-short-write（Phase 3-4）调用。
   也可执行完整去AI味流程和格式合规检查。
 tools:
-  Read: allow
-  Glob: allow
-  Grep: allow
-  Write: allow
-  Edit: allow
+  Read: true
+  Glob: true
+  Grep: true
+  Write: true
+  Edit: true
 model: sonnet
 ---
 

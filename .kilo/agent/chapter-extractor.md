@@ -5,9 +5,9 @@ description: |
   被 story-long-analyze（拆解管道 Stage 2）按章节并行调用。
   输出格式严格遵循本文件「输出格式」章节；不依赖外部输出模板文件。
 tools:
-  Read: allow
-  Glob: allow
-  Grep: allow
+  Read: true
+  Glob: true
+  Grep: true
 model: haiku
 ---
 

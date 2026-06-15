@@ -6,9 +6,9 @@ description: |
   被 story-review、story-long-write（Phase 5）、story-short-write（Phase 4）调用。
   不做任何创作判断。
 tools:
-  Read: allow
-  Glob: allow
-  Grep: allow
+  Read: true
+  Glob: true
+  Grep: true
 model: haiku
 ---
 

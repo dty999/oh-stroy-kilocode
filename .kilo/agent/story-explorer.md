@@ -8,9 +8,9 @@ description: |
   story 路由（用户自然提问时）调用。
   不做任何创作判断或修改。
 tools:
-  Read: allow
-  Glob: allow
-  Grep: allow
+  Read: true
+  Glob: true
+  Grep: true
 model: haiku
 ---
 

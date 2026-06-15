@@ -5,11 +5,11 @@ description: |
   WebSearch/webReader 作为兜底。输出带来源引用的结构化 Markdown 参考文件。
   被 story-long-write（Phase 4）、story-review、story skill 路由调用。
 tools:
-  Read: allow
-  Glob: allow
-  Grep: allow
-  Bash: allow
-  Write: allow
+  Read: true
+  Glob: true
+  Grep: true
+  Bash: true
+  Write: true
 model: sonnet
 ---
 
